@@ -13,6 +13,17 @@
 - Linters
 - Documented Work
 
+## Setup
+
+Go to your terminal and navigate to where you store project repositories
+and run these commands:
+
+- $ git clone https://github.com/isaacpitwa/ruby-blog.git
+- $ cd blogApp
+- $ bundle
+- $ rails db:setup after setting the correct username and password in the database
+- $ rails s # To run the server
+- $ rspec # To test the application
 
 ## Authors
 
