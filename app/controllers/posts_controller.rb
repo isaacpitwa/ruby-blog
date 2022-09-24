@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.find(params[:id])
   end
+
   def comment
     @post = Post.find(params[:id])
     p params
