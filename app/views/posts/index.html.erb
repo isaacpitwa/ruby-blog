@@ -14,7 +14,7 @@
     <p class='count'>Comments <%=post.comments_counter%>, Likes <%=post.likes_counter%></p>
     <div class="user-post-comments">
       <h3>Comments</h3>
-      <%post.comments.each do |comment|%>
+      <%post.most_recent_five_comments.each do |comment|%>
         <p><%= comment.author.name %>: <%= comment.text %></p>
       <%end%>
     </div>
