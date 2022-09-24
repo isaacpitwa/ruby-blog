@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def comment
     @post = Post.find(params[:id])
     p params
-    @comment = Comment.new(user: current_user, post: @post, text: params[:text])
+    @comment = Comment.new(author: current_user, post: @post, text: params[:text],user: current_user)
     @comment.save
     @comment.update_comment_counter
     redirect_to user_posts_path(current_user)
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user = current_user
+    @post.author = current_user
     if @post.save
       puts @post
       redirect_to user_posts_path(current_user)
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    @like = Like.new(user: current_user, post: @post)
+    @like = Like.new(author: current_user, post: @post)
     @like.save
     @like.update_likes_counter
     redirect_to user_posts_path(current_user)
