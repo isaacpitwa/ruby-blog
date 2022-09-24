@@ -11,10 +11,11 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.find(params[:id])
   end
+
   def comment
     @post = Post.find(params[:id])
     p params
-    @comment = Comment.new(author: current_user, post: @post, text: params[:text],user: current_user)
+    @comment = Comment.new(author: current_user, post: @post, text: params[:text], user: current_user)
     @comment.save
     @comment.update_comment_counter
     redirect_to user_posts_path(current_user)
