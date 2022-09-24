@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   has_many :likes
   has_many :comments
 
-  validates :title, presence: true, length: { minimum: 3, maximum: 255 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 5000 }
   validates :text, length: { minimum: 3, maximum: 255 }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
