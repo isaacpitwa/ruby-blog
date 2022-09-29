@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BlogApp</title>
+    <title>Blogapp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,14 +11,6 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-          <%= link_to 'Sign Out' ,destroy_user_session_path, method: :delete %>
-        <%else %>
-          <%= link_to 'Sign In' ,new_user_session_path%>
-          <%= link_to 'Sign Up' ,new_user_registration_path%>
-        <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
   def index
+    redirect_to new_user_session_path if current_user.nil?
     @users = User.all
   end
 
   def show
-    if params[:id] == 'sign_out'
-      sign_out current_user
-      redirect_to root_path
-    else
-      @user = User.find(params[:id])
-      @most_recent_three_posts = @user.most_recent_three_posts
-    end
+    @user = User.find(params[:id])
+    @most_recent_three_posts = @user.most_recent_three_posts
   end
 end

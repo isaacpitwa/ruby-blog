@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     post "/posts/:id/like" => "posts#like", as: :like
     post "/posts/:id/comment" => "posts#comment", as: :comments
   end
+
 end
