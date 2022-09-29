@@ -28,7 +28,6 @@ and run these commands:
 ## Authors
 
 👤 **Isaac Pitwa**
-
 - GitHub: [@isaacpitwa](https://github.com/isaacpitwa)
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
