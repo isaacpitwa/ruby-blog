@@ -11,12 +11,15 @@
   </head>
 
   <body>
-  <% if user_signed_in? %>
-          <%= link_to 'Sign Out' ,destroy_user_session_path, method: :delete %>
-        <%else %>
-          <%= link_to 'Sign In' ,new_user_session_path%>
-          <%= link_to 'Sign Up' ,new_user_registration_path%>
-        <% end %>
+   <div class="session-actions">
+      <%if user_signed_in?%>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: 'btn' %>
+        <%= button_to "Create Post", new_user_post_path(current_user), method: :get, class: 'btn' %>
+      <%else%>
+        <%= button_to "Sign up", new_user_registration_path, method: :get, class: 'btn' %>
+        <%= button_to "Log in", user_session_path, method: :get, class: 'btn' %>
+      <%end%>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
