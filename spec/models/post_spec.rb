@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'Title', text: 'Text', user: User.first) }
+  subject { Post.new(title: 'Title', text: 'Text', author: User.first) }
 
   before { subject.save }
 
