@@ -54,5 +54,4 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_posts_path(current_user)
   end
-  
 end
