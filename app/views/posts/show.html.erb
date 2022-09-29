@@ -9,16 +9,21 @@
   <%end%>
 </div>    <h4>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></h4>
     <p><%=@post.text%></p>
+        <% if can? :delete, post %>
+    <%= button_to "Delete Post", user_post_path(@user, post), method: :delete, class: 'btn delete-post'%>
+    <% end %>
   </div>
   <div class="post--comments">
     <h3>Comments</h3>
     <%@post.comments.each do |comment|%>
       <div class="comment">
         <p><span><%=comment.author.name%></span>:&nbsp;<%=comment.text%></p>
-        <p></p>
+          <% if can? :delete, comment %>
+          <%= button_to "Delete", user_post_comment_path(comment.user, @post, comment), method: :delete, class: 'btn delete-comment'%>
+        <% end %>
       </div>
     <%end%>
-    <%=form_with :url => user_comments_path(@user, @post), :method => :post, :class => 'new-comment' do |f|%>
+    <%=form_with :url => user_post_comments_path(@user, @post), :method => :post, :class => 'new-comment' do |f|%>
       <%=f.text_field :text, placeholder: 'Comment', class: 'comment-text'%>
       <%=f.submit 'Comment', class: 'comment-submit'%>
     <%end%>
