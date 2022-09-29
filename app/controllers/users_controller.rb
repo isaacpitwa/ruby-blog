@@ -11,6 +11,5 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @most_recent_three_posts = @user.most_recent_three_posts
     end
-   
   end
 end
