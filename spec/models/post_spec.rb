@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject { Post.new(title: 'Title', text: 'Text', author: User.first) }
+  subject { Post.new(title: 'Title', text: 'Text', user: User.first) }
 
   before { subject.save }
 
@@ -17,7 +17,6 @@ RSpec.describe Post, type: :model do
 
   it 'text must not exceed 255 characters' do
     subject.text = 'a' * 5001
-
     expect(subject).to_not be_valid
   end
 

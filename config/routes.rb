@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,4 +9,5 @@ Rails.application.routes.draw do
     post "/posts/:id/like" => "posts#like", as: :like
     post "/posts/:id/comment" => "posts#comment", as: :comments
   end
+
 end
