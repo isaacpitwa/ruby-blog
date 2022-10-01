@@ -30,8 +30,9 @@ gem 'redis', '~> 4.0'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
-# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem 'bcrypt', '~> 3.1.7'
+gem 'jwt', '~> 2.2'
+gem 'rack-cors'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -45,6 +46,8 @@ gem 'font-awesome-sass', '~> 6.1.1'
 gem 'sassc-rails'
 
 gem 'devise'
+gem 'rswag-api'
+gem 'rswag-ui'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -54,6 +57,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 group :development do
